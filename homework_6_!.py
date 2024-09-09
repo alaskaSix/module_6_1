@@ -5,6 +5,14 @@ class Animal:
         self.fed = False  # Накормленное или нет
         self.name = name  # Имя животного
 
+    def eat(self, food):
+        if food.edible:
+            print(f"{self.name} съел {food.name}")
+            self.fed = True
+        else:
+            print(f"{self.name} не стал есть {food.name}")
+            self.alive = False
+
 
 # Родительский
 class Plant:
@@ -15,35 +23,21 @@ class Plant:
 
 # наследник Animal
 class Mammal(Animal):
-    def eat(self, food):
-        if food.edible:
-            print(f"{self.name} съел {food.name}")
-            self.fed = True
-        else:
-            print(f"{self.name} не стал есть {food.name}")
-            self.alive = False
+    pass
 
 
 # наследник Animal
 class Predator(Animal):
-    def init(self, name):
-        super().init()
-
-    def eat(self, food):
-        if food.edible:
-            print(f"{self.name} съел {food.name}")
-            self.fed = True
-        else:
-            print(f"{self.name} не стал есть {food.name}")
-            self.alive = False
+    pass
 
 
 # наследник Plant
 class Flower(Plant):
-    pass  # цветы по умолчанию несъедобны
-
+    pass
 
 # наследник Plant
+
+
 class Fruit(Plant):
     def init(self, name):
         super().init(name)
